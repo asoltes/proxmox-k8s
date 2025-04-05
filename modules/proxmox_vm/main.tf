@@ -13,6 +13,9 @@ resource "proxmox_virtual_environment_vm" "this" {
   memory {
     dedicated = var.memory_dedicated
   }
+  network_device {
+    bridge = "vmbr0"
+  }
 
   initialization {
     dns {

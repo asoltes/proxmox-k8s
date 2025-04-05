@@ -7,7 +7,7 @@ output "vm_info" {
     agent       = proxmox_virtual_environment_vm.this.agent[0].enabled
     memory      = proxmox_virtual_environment_vm.this.memory[0].dedicated
     dns_servers  = proxmox_virtual_environment_vm.this.initialization[0].dns[0].servers
-    ipv4_address = proxmox_virtual_environment_vm.this.initialization[0].ip_config[0].ipv4[0].address
+    ipv4_address = proxmox_virtual_environment_vm.this.initialization[0].ip_config[0].ipv4
   }
 
 }
