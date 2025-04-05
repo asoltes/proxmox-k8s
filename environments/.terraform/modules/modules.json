@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"k3s_vms","Source":"../modules/proxmox_vm","Dir":"../modules/proxmox_vm"},{"Key":"ubuntu_clone","Source":"../modules/proxmox_vm","Dir":"../modules/proxmox_vm"}]}
