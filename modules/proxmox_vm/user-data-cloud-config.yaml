@@ -1,0 +1,20 @@
+    #cloud-config
+    hostname: ${var.hostname}
+    timezone: Asia/Manila
+    users:
+      - default
+      - name: k3s_admin
+        groups:
+          - sudo
+        shell: /bin/bash
+        sudo: ALL=(ALL) NOPASSWD:ALL
+    package_update: true
+    packages:
+      - qemu-guest-agent
+      - net-tools
+      - curl
+    runcmd:
+      - systemctl enable qemu-guest-agent
+      - systemctl start qemu-guest-agent
+      - echo "done" > /tmp/cloud-config.done
+      - hostnamectl set-hostname "${var.hostname}"

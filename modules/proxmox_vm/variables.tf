@@ -1,41 +1,76 @@
-variable "name" {
-  description = "Name of the VM"
+variable "vm_name" {
+  description = "Name of the virtual machine"
   type        = string
-  default     = null
 }
 
 variable "node_name" {
-  description = "Name of the Proxmox node"
+  description = "Proxmox node to deploy the VM on"
   type        = string
-  default     = "pve"
+}
+
+variable "vm_id" {
+  description = "ID of the VM"
+  type        = number
+}
+
+variable "cpu_cores" {
+  description = "Number of CPU cores"
+  type        = number
+  default     = 2
+}
+
+variable "cpu_type" {
+  description = "CPU type"
+  type        = string
+  default     = "x86-64-v2-AES"
+}
+
+variable "memory_mb" {
+  description = "Memory size in MB"
+  type        = number
+  default     = 2048
+}
+
+variable "disk_datastore_id" {
+  description = "Datastore ID for the VM disk"
+  type        = string
+}
+
+variable "iso_datastore_id" {
+  description = "Datastore ID for the ISO image"
+  type        = string
+}
+
+variable "iso_node_name" {
+  description = "Node name for ISO download"
+  type        = string
+}
+
+variable "network_bridge" {
+  description = "Bridge to connect network device"
+  type        = string
+  default     = "vmbr0"
+}
+
+variable "vm_username" {
+  description = "Default username for the VM"
+  type        = string
+  default     = "ubuntu"
 }
 
 variable "clone_vm_id" {
-  description = "ID of the VM to clone"
+  description = "ID of the VM to clone from"
   type        = number
-  default     = 108
-}
-
-variable "agent_enabled" {
-  description = "Whether the agent is enabled"
-  type        = bool
-  default     = false
-}
-
-variable "memory_dedicated" {
-  description = "Dedicated memory in MB"
-  type        = number
-  default     = 1024
-}
-
-variable "dns_servers" {
-  description = "List of DNS servers"
-  type        = list(string)
-  default     = ["192.168.254.105", "1.1.1.1"]
 }
 
 variable "ipv4_address" {
-  description = "IPv4 address (e.g., 'dhcp' or static address)"
-  type        = string
-  default     = "dhcp"
+  description = "ipv4 address"
+  type = string
+  
+}
+
+variable "hostname" {
+  description = "hostname"
+  type = string
+  
 }

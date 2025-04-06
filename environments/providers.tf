@@ -8,9 +8,17 @@ terraform {
 }
 
 provider "proxmox" {
-endpoint = "https://pve.andrestrek.com/api2/json"
+  endpoint = "https://pve.andrestrek.com/api2/json"
   username = "root@pam"
   password = "bsit113092"
   insecure = true
 
+  # ssh {
+  #   agent = true
+  #   # TODO: uncomment and configure if using api_token instead of password
+  #   username = "root"
+  #   password = "bsit113092"
+  # }
+
 }
+
