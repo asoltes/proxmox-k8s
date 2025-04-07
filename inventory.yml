@@ -3,12 +3,12 @@ k3s_cluster:
   children:
     server:
       hosts:
-        192.168.254.29:
+        192.168.254.30:
     agent:
       hosts:
-        192.168.254.30:
         192.168.254.31:
         192.168.254.32:
+        192.168.254.33:
 
   # Required Vars
   vars:
