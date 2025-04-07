@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-argocd-poc-webapp
-  namespace: argocd-poc-namespace
 spec:
   replicas: 2
   selector:
@@ -16,19 +15,5 @@ spec:
       containers:
       - name: nginx
         image: asoltes/nginx-argocd-poc:v1.0.0
-        volumeMounts:
-        - name: argocd-poc-webapp
-          mountPath: /etc/argocd-poc-webapp
-          readOnly: true
         ports:
         - containerPort: 80
-      volumes:
-      - name: argocd-poc-webapp
-        downwardAPI:
-          items:
-          - path: "podname"
-            fieldRef:
-              fieldPath: metadata.name
-          - path: "nodename"
-            fieldRef:
-              fieldPath: spec.nodeName
