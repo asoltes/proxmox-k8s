@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: argocd-poc-webapp
+  name: argocd-poc-webapp-service
 spec:
   selector:
-    app: argocd-poc
+    app: argocd-poc-webapp
   ports:
     - protocol: TCP
       port: 80
