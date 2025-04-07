@@ -2,7 +2,7 @@ FROM nginx:alpine
 
 # Copy script and template
 COPY entrypoint.sh /entrypoint.sh
-COPY template.html /usr/share/nginx/html/template.html
+COPY index.html /usr/share/nginx/html/index.html
 
 RUN chmod +x /entrypoint.sh
 

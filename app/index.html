@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ArgoCD</title>
+  <style>
+    body {
+      background-color: #f0f4f8; /* Light blue-gray background */
+      font-family: Arial, sans-serif;
+    }
+
+    h1, h2, h3, p {
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <h1>ArgoCD-Demo</h1>
+    <h2><strong>AppVersion: v1.0.0</strong></h2>
+    <h3>Welcome to ArgoCD Demo Application</h3>
+    <p>This is a simple application to demonstrate the use of ArgoCD for continuous deployment.</p>
+    <p>Current time: <span id="current-time"></span></p>
+  </center>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      document.getElementById('current-time').innerText = now.toLocaleString();
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+  </script>
+</body>
+</html>
